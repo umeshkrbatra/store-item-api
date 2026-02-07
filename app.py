@@ -5,7 +5,16 @@ from flask_smorest import abort
 import os
 
 
+
+
+
+
 app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "RENDER FLASK APP IS RUNNING"
+
 port = int(os.environ.get("PORT", 5000))
 app.run(host="0.0.0.0", port=port)
 
