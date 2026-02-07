@@ -2,8 +2,13 @@ from flask import Flask,request
 from db import db,ItemModel,StoreModel
 import uuid
 from flask_smorest import abort
+import os
+
 
 app = Flask(__name__)
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
+
 
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
