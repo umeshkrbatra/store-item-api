@@ -204,6 +204,10 @@ api.register_blueprint(store_blp)
 api.register_blueprint(item_blp)
 
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
 # @app.get("/")
 # def home():
 #     return {"message": "API is running"}
@@ -367,6 +371,3 @@ api.register_blueprint(item_blp)
 #     return {"message": "Item deleted"}
 
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
